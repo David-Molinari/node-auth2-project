@@ -4,7 +4,6 @@ const secrets = require("../api/secrets.js");
 
 module.exports = (req, res, next) => {
   const token = req.headers.authorization;
-  console.log(req.headers);
   const secret = secrets.jwtSecret;
   if (token) {
     jwt.verify(token, secret, (error, decodedToken) => {
